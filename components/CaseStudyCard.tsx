@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, TrendingUp, Layers } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Project } from "@/data/projects";
 
 interface CaseStudyCardProps {

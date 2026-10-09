@@ -11,20 +11,7 @@ import { companyData } from "@/data/company";
 import { servicesData } from "@/data/services";
 import { projectsData } from "@/data/projects";
 import { faqsData } from "@/data/faqs";
-import {
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  Code2,
-  Layers,
-  Cpu,
-  Clock8,
-  TrendingUp,
-  MapPin,
-  Users,
-  Compass,
-} from "lucide-react";
+import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function HomePage() {
   return (

@@ -5,15 +5,10 @@ import {
   Server,
   Database,
   Cpu,
-  Smartphone,
-  ShieldCheck,
-  Zap,
   Globe,
   Terminal,
   Layers,
-  CheckCircle2,
   Activity,
-  ArrowRight,
 } from "lucide-react";
 
 export default function HeroVisual() {
@@ -186,7 +181,7 @@ export default function HeroVisual() {
         {activeTab === "code" && (
           <div className="p-6 sm:p-8 font-mono text-xs text-slate-300 bg-[#060a14] overflow-x-auto leading-relaxed">
             <pre className="text-slate-300">
-              <span className="text-slate-500">// GonjoTech Enterprise Service Definition</span>{"\n"}
+              <span className="text-slate-500">{"// GonjoTech Enterprise Service Definition"}</span>{"\n"}
               <span className="text-indigo-400">interface</span> <span className="text-cyan-300">EnterpriseDeployment</span> &#123;{"\n"}
               {"  "}project: <span className="text-emerald-300">&quot;GonjoERP Cloud Suite&quot;</span>;{"\n"}
               {"  "}version: <span className="text-amber-300">&quot;2025.4.0&quot;</span>;{"\n"}

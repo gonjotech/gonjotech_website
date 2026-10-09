@@ -6,13 +6,9 @@ import { teamData } from "@/data/team";
 import {
   Compass,
   Target,
-  Sparkles,
-  ShieldCheck,
   MapPin,
   Clock8,
   ArrowRight,
-  HeartHandshake,
-  Users,
 } from "lucide-react";
 
 export const metadata: Metadata = {

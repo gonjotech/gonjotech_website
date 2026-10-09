@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudyCard from "@/components/CaseStudyCard";
-import SectionHeader from "@/components/SectionHeader";
 import { projectsData } from "@/data/projects";
-import { Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Portfolio & Case Studies | Proven Software & Web Engineering",

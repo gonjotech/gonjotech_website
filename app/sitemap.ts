@@ -5,7 +5,7 @@ import { blogPostsData } from "@/data/blogPosts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gonjotech.com";
-  const now = new Date("2025-03-01T00:00:00.000Z");
+  const now = new Date("2026-10-09T00:00:00.000Z");
 
   // Core static pages
   const staticPages: MetadataRoute.Sitemap = [

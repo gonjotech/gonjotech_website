@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // Production server entry for cPanel Node.js App (Passenger / PM2)
 const { createServer } = require('http');
 const { parse } = require('url');

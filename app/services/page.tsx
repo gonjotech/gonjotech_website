@@ -5,13 +5,11 @@ import ServiceCard from "@/components/ServiceCard";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import { servicesData } from "@/data/services";
 import {
-  Sparkles,
   ArrowRight,
   CheckCircle2,
   Users,
   Briefcase,
   Clock,
-  Layers,
 } from "lucide-react";
 
 export const metadata: Metadata = {

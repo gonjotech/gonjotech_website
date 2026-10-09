@@ -6,7 +6,6 @@ import {
   Calculator,
   ArrowRight,
   CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 
 const products = [

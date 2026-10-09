@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SectionHeader from "@/components/SectionHeader";
 import { blogPostsData } from "@/data/blogPosts";
-import {
-  Clock,
-  ArrowRight,
-  BookOpen,
-  Calendar,
-  Sparkles,
-} from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Insights & Engineering Blog | Technology Articles & Analysis",

@@ -6,7 +6,6 @@ import {
   ChevronRight,
   ArrowRight,
   CheckCircle2,
-  TrendingUp,
   Cpu,
   Layers,
   Sparkles,

@@ -6,9 +6,7 @@ import {
   MapPin,
   Phone,
   Mail,
-  ArrowUpRight,
   ShieldCheck,
-  CheckCircle2,
   ExternalLink,
 } from "lucide-react";
 import { companyData } from "@/data/company";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -15,33 +15,22 @@ import { servicesData } from "@/data/services";
 
 function ContactFormInner() {
   const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  const defaultService = serviceParam
+    ? servicesData.find((s) => s.title.toLowerCase() === serviceParam.toLowerCase())?.title || serviceParam
+    : servicesData[0]?.title || "Custom Software Development";
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
-    service: servicesData[0]?.title || "Custom Software Development",
+    service: defaultService,
     budget: "$2,000 - $5,000",
     message: "",
     privacyConsent: false,
     honeypot: "", // hidden field for bot spam trap
   });
-
-  // Pre-populate service dropdown if passed in query param (?service=...)
-  useEffect(() => {
-    const serviceParam = searchParams.get("service");
-    if (serviceParam) {
-      const matched = servicesData.find(
-        (s) => s.title.toLowerCase() === serviceParam.toLowerCase()
-      );
-      if (matched) {
-        setFormData((prev) => ({ ...prev, service: matched.title }));
-      } else {
-        setFormData((prev) => ({ ...prev, service: serviceParam }));
-      }
-    }
-  }, [searchParams]);
 
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);

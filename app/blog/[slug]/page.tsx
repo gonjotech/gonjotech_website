@@ -6,11 +6,8 @@ import AdSenseUnit from "@/components/AdSenseUnit";
 import {
   ChevronRight,
   Clock,
-  User,
   Calendar,
   ArrowLeft,
-  ArrowRight,
-  Share2,
 } from "lucide-react";
 
 interface Props {

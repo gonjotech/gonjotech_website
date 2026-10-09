@@ -8,7 +8,6 @@ import {
   Clock8,
   MessageCircle,
   ShieldCheck,
-  CheckCircle2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
