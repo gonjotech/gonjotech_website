@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
       "Role-Based Permission Matrix",
       "Staff Training & Data Migration",
     ],
-    image: "/images/projects/erp-preview.svg",
+    image: "/images/gonjo-erp-preview.jpg",
     accentColor: "from-blue-600/30 to-cyan-500/10",
   },
   {
@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
       "SMS Notification Engine",
       "Integrated Digital Payment Gateway",
     ],
-    image: "/images/projects/edu-preview.svg",
+    image: "/images/gonjo-edu-preview.jpg",
     accentColor: "from-indigo-600/30 to-violet-500/10",
   },
   {
@@ -108,7 +108,7 @@ export const projectsData: Project[] = [
       "Unified Customer Loyalty System",
       "Thermal Receipt Printer Driver Support",
     ],
-    image: "/images/projects/pos-preview.svg",
+    image: "/images/retail-pos-preview.jpg",
     accentColor: "from-emerald-600/30 to-teal-500/10",
   },
   {
@@ -138,7 +138,7 @@ export const projectsData: Project[] = [
       "Customer Real-time Tracking Web View",
       "Digital Signature & Photo Verification",
     ],
-    image: "/images/projects/mobile-preview.svg",
+    image: "/images/swift-courier-preview.jpg",
     accentColor: "from-cyan-600/30 to-blue-500/10",
   },
 ];

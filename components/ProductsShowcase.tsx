@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Layers,
   GraduationCap,
@@ -24,6 +25,7 @@ const products = [
     metric: "75%",
     metricLabel: "Reduction in Reconciliation Overhead",
     icon: Layers,
+    image: "/images/gonjo-erp-preview.jpg",
     accent: "from-blue-600/30 via-cyan-500/10 to-transparent",
     badge: "Enterprise Flagship",
     link: "/portfolio/gonjo-erp-enterprise-suite",
@@ -43,6 +45,7 @@ const products = [
     metric: "90%",
     metricLabel: "Faster Report Card Generation",
     icon: GraduationCap,
+    image: "/images/gonjo-edu-preview.jpg",
     accent: "from-indigo-600/30 via-violet-500/10 to-transparent",
     badge: "Academic Sector",
     link: "/portfolio/gonjo-education-management",
@@ -62,6 +65,7 @@ const products = [
     metric: "<150ms",
     metricLabel: "Cross-Store Inventory Sync Latency",
     icon: Store,
+    image: "/images/retail-pos-preview.jpg",
     accent: "from-cyan-600/30 via-teal-500/10 to-transparent",
     badge: "Retail & Commerce",
     link: "/portfolio/omnichannel-retail-pos-ecommerce",
@@ -81,6 +85,7 @@ const products = [
     metric: "99.4%",
     metricLabel: "Physical Stock Count Accuracy",
     icon: Calculator,
+    image: "/images/accounting-preview.jpg",
     accent: "from-emerald-600/30 via-blue-500/10 to-transparent",
     badge: "Financial Engine",
     link: "/services/enterprise-erp-solutions",
@@ -120,6 +125,21 @@ export default function ProductsShowcase() {
               <p className="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-4">
                 {prod.tagline}
               </p>
+
+              {/* High-Resolution Interface Preview */}
+              {prod.image && (
+                <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden border border-white/10 mb-6 group-hover:border-cyan-500/40 transition-all shadow-xl bg-[#070b14]">
+                  <Image
+                    src={prod.image}
+                    alt={`${prod.name} Interface Preview`}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090e1d] via-transparent to-transparent opacity-40 pointer-events-none" />
+                </div>
+              )}
+
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 {prod.description}
               </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { projectsData } from "@/data/projects";
 import {
   ChevronRight,
@@ -80,6 +81,21 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             {project.overview}
           </p>
         </div>
+
+        {/* Featured Interface Visual */}
+        {project.image && (
+          <div className="relative w-full h-64 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-cyan-950/40 bg-[#070b14]">
+            <Image
+              src={project.image}
+              alt={`${project.title} Interface`}
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="(max-width: 1280px) 100vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent opacity-30 pointer-events-none" />
+          </div>
+        )}
 
         {/* Key Metrics Banner */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-8 rounded-3xl bg-[#0b1322] border border-cyan-500/30">

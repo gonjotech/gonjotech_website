@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import { companyData } from "@/data/company";
 import { teamData } from "@/data/team";
@@ -38,6 +39,32 @@ export default function AboutPage() {
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             Founded in 2019, GonjoTech is an energetic software company and digital product studio committed to delivering uncompromised quality, robust enterprise software, and scalable technology partnerships.
           </p>
+        </div>
+
+        {/* Engineering Studio Showcase Banner */}
+        <div className="relative w-full h-72 sm:h-96 lg:h-[440px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-cyan-950/40 bg-[#070b14]">
+          <Image
+            src="/images/engineering-lab.jpg"
+            alt="GonjoTech Collaborative Engineering Studio"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="(max-width: 1280px) 100vw, 1200px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050811] via-[#050811]/30 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            <div>
+              <span className="text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 backdrop-blur-md">
+                Engineering Studio
+              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mt-2">
+                Collaborative Architecture &amp; Enterprise Systems Development
+              </h2>
+            </div>
+            <span className="text-xs text-slate-300 bg-slate-900/80 px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-md font-mono">
+              Dhaka HQ &bull; Mirpur-14
+            </span>
+          </div>
         </div>
 
         {/* Founding Journey & Company Story */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "@/data/projects";
 
@@ -8,11 +9,25 @@ interface CaseStudyCardProps {
 
 export default function CaseStudyCard({ project }: CaseStudyCardProps) {
   return (
-    <div className="bg-[#090e1d]/90 border border-white/[0.08] hover:border-cyan-500/35 rounded-3xl p-7 sm:p-9 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 relative overflow-hidden shadow-lg">
+    <div className="bg-[#090e1d]/90 border border-white/[0.08] hover:border-cyan-500/35 rounded-3xl p-6 sm:p-8 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 relative overflow-hidden shadow-lg">
       {/* Background radial highlight */}
       <div className="absolute -top-24 -right-24 w-52 h-52 bg-cyan-500/8 rounded-full blur-2xl group-hover:bg-cyan-500/15 transition-colors pointer-events-none" />
 
       <div>
+        {/* Project Thumbnail Image */}
+        {project.image && (
+          <div className="relative w-full h-48 sm:h-56 mb-6 rounded-2xl overflow-hidden border border-white/10 group-hover:border-cyan-500/35 transition-all bg-[#070b14]">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#090e1d] via-transparent to-transparent opacity-40 pointer-events-none" />
+          </div>
+        )}
+
         {/* Top Badges */}
         <div className="flex items-center justify-between mb-5">
           <span className="text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#0c1429] text-cyan-300 border border-cyan-500/20">
