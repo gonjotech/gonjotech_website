@@ -1,15 +1,47 @@
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/gonjotech/public_html"
-PassengerBaseURI "/"
-PassengerAppType node
-PassengerStartupFile server.js
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
-
-# Disable directory listing
+# LiteSpeed & Apache Production Configuration for GonjoTech
 Options -Indexes
+DirectoryIndex index.html index.htm index.php
 
-# Direct rule for ads.txt
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^ads\.txt$ public/ads.txt [L]
+  RewriteBase /
+
+  # 1. Permanent 301 Redirects for Legacy URLs
+  RewriteRule ^home/?$ / [R=301,L]
+  RewriteRule ^blogsc/?$ /blog [R=301,L]
+  RewriteRule ^company/?$ /about [R=301,L]
+  RewriteRule ^privacy-policy/?$ /privacy [R=301,L]
+  RewriteRule ^services-software-development/?$ /services/custom-software-development [R=301,L]
+  RewriteRule ^services-website-development/?$ /services/web-development [R=301,L]
+  RewriteRule ^services-mobile-apps-development/?$ /services/mobile-app-development [R=301,L]
+  RewriteRule ^services-digital-marketing/?$ /services/digital-marketing-seo [R=301,L]
+  RewriteRule ^what-is-object-oriantation/?$ /blog/what-is-object-orientation-in-modern-software [R=301,L]
+  RewriteRule ^how-to-convert-website-to-mobile-app/?$ /blog/how-to-convert-website-to-mobile-app [R=301,L]
+  RewriteRule ^virtual-reality/?$ /blog/virtual-reality-and-modern-digital-simulation [R=301,L]
+  RewriteRule ^top-3-programming-languages-to-learn-in-2020/?$ /blog/top-programming-languages-for-enterprise-software [R=301,L]
+  RewriteRule ^freelancing-as-a-career/?$ /blog/tech-talent-and-global-outsourcing-in-bangladesh [R=301,L]
+  RewriteRule ^motin-mia-a-fairytale-bangladeshi-footballer/?$ /blog/motin-mia-a-fairytale-bangladeshi-footballer [R=301,L]
+
+  # 2. Serve static Next.js assets
+  RewriteRule ^_next/static/(.*)$ .next/static/$1 [L,QSA]
+
+  # 3. If the actual file or directory exists, serve directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 4. Clean URL rewriting: /about -> /about.html or /about/index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
+
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.*)/?$ $1.html [L]
+</IfModule>
+
+# Optional Passenger directives for Node.js environments
+<IfModule mod_passenger.c>
+  PassengerAppRoot "/home/gonjotech/public_html"
+  PassengerBaseURI "/"
+  PassengerAppType node
+  PassengerStartupFile server.js
 </IfModule>
