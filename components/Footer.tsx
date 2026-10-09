@@ -84,6 +84,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools" className="text-slate-400 hover:text-white transition-colors">
+                  Developer Tools &amp; Utilities
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-slate-400 hover:text-white transition-colors">
                   Request a Quotation
                 </Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPostsData } from "@/data/blogPosts";
+import AdSenseUnit from "@/components/AdSenseUnit";
 import { Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -71,6 +72,9 @@ export default function BlogPage() {
             </div>
           </div>
         )}
+
+        {/* AdSense Unit on Blog Index */}
+        <AdSenseUnit slot="7244702911" />
 
         {/* Grid of Remaining Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
