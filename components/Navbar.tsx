@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import { companyData } from "@/data/company";
 import { Menu, X, ArrowRight, PhoneCall, Sparkles } from "lucide-react";
 
 const navLinks = [
@@ -97,12 +98,12 @@ export default function Navbar() {
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="tel:+8801736902507"
+                href={`tel:${companyData.primaryPhone.replace(/[^0-9+]/g, "")}`}
                 className="hidden xl:flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 font-medium transition-colors px-2 py-1"
                 title="Direct Phone Line"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
-                <span>+880 1736-902507</span>
+                <span>{companyData.primaryPhone}</span>
               </a>
 
               <Link
@@ -178,11 +179,11 @@ export default function Navbar() {
 
               <div className="text-center pt-2">
                 <a
-                  href="tel:+8801736902507"
+                  href={`tel:${companyData.primaryPhone.replace(/[^0-9+]/g, "")}`}
                   className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-400 font-medium"
                 >
                   <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Call Us: +880 1736-902507</span>
+                  <span>Call Us: {companyData.primaryPhone}</span>
                 </a>
               </div>
             </div>

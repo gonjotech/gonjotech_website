@@ -69,16 +69,16 @@ export default function ContactPage() {
                       Direct Phone Lines
                     </span>
                     <a
-                      href="tel:+8801736902507"
+                      href="tel:+8801623473041"
                       className="text-white hover:text-cyan-400 font-semibold block transition-colors mt-0.5"
                     >
-                      +880 1736-902507
+                      +880 1623-473041
                     </a>
                     <a
-                      href="tel:+8801623473041"
+                      href="tel:+8801736902507"
                       className="text-slate-400 hover:text-white block transition-colors"
                     >
-                      +880 1623-473041
+                      +880 1736-902507
                     </a>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                 <span>Locate GonjoTech on Google Maps</span>
               </h2>
               <p className="text-xs text-slate-400">
-                House 351, Matbar Bari Sarak, Mirpur-14, Dhaka, Bangladesh
+                {companyData.headquarters.formatted}
               </p>
             </div>
             <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 w-fit">

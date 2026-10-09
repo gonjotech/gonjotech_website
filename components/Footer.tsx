@@ -131,16 +131,16 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="tel:+8801736902507"
+                    href="tel:+8801623473041"
                     className="hover:text-white block transition-colors font-medium text-slate-200"
                   >
-                    +880 1736-902507
+                    +880 1623-473041
                   </a>
                   <a
-                    href="tel:+8801623473041"
+                    href="tel:+8801736902507"
                     className="hover:text-white block transition-colors text-slate-400"
                   >
-                    +880 1623-473041
+                    +880 1736-902507
                   </a>
                 </div>
               </div>
