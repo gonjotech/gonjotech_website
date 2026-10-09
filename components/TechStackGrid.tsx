@@ -62,14 +62,14 @@ export default function TechStackGrid() {
       {techCategories.map((group) => (
         <div
           key={group.category}
-          className="bg-[#0b1322]/80 border border-white/10 rounded-2xl p-6 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
+          className="bg-[#090e1d]/90 border border-white/[0.08] hover:border-cyan-500/35 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg"
         >
           <div>
-            <div className="mb-4">
-              <h3 className="text-lg font-bold text-white mb-1">
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-white mb-1 tracking-tight">
                 {group.category}
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-300 font-normal">
                 {group.description}
               </p>
             </div>
@@ -78,13 +78,13 @@ export default function TechStackGrid() {
               {group.items.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center justify-between p-2.5 rounded-xl bg-[#070b14]/90 border border-white/5 hover:border-white/10 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-2xl bg-[#060a14] border border-white/5 hover:border-white/10 transition-colors"
                 >
                   <div>
-                    <span className="text-sm font-semibold text-slate-200 block">
+                    <span className="text-xs font-semibold text-slate-200 block">
                       {tech.name}
                     </span>
-                    <span className="text-[10px] text-slate-500">
+                    <span className="text-[10px] text-slate-400 font-mono">
                       {tech.tag}
                     </span>
                   </div>

@@ -59,23 +59,23 @@ export default function Navbar() {
             <Logo />
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
+            <nav
+              className="hidden md:flex items-center gap-1 px-2 py-1 rounded-full bg-[#090f20]/75 border border-white/[0.08] backdrop-blur-xl shadow-inner"
+              aria-label="Main Navigation"
+            >
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                    className={`relative px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all ${
                       isActive
-                        ? "text-cyan-400 bg-cyan-500/10"
-                        : "text-slate-300 hover:text-white hover:bg-white/5"
+                        ? "text-cyan-300 bg-cyan-500/15 border border-cyan-400/30 shadow-sm"
+                        : "text-slate-300 hover:text-white hover:bg-white/[0.06]"
                     }`}
                   >
                     {link.name}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-cyan-400 rounded-full" />
-                    )}
                   </Link>
                 );
               })}
