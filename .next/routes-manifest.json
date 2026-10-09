@@ -1,0 +1,309 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/home(?:/)?$"
+    },
+    {
+      "source": "/blogsc",
+      "destination": "/blog",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/blogsc(?:/)?$"
+    },
+    {
+      "source": "/company",
+      "destination": "/about",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/company(?:/)?$"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/privacy-policy(?:/)?$"
+    },
+    {
+      "source": "/services-software-development",
+      "destination": "/services/custom-software-development",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services-software-development(?:/)?$"
+    },
+    {
+      "source": "/services-website-development",
+      "destination": "/services/web-development",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services-website-development(?:/)?$"
+    },
+    {
+      "source": "/services-mobile-apps-development",
+      "destination": "/services/mobile-app-development",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services-mobile-apps-development(?:/)?$"
+    },
+    {
+      "source": "/services-digital-marketing",
+      "destination": "/services/digital-marketing-seo",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services-digital-marketing(?:/)?$"
+    },
+    {
+      "source": "/what-is-object-oriantation",
+      "destination": "/blog/what-is-object-orientation-in-modern-software",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/what-is-object-oriantation(?:/)?$"
+    },
+    {
+      "source": "/how-to-convert-website-to-mobile-app",
+      "destination": "/blog/how-to-convert-website-to-mobile-app",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/how-to-convert-website-to-mobile-app(?:/)?$"
+    },
+    {
+      "source": "/virtual-reality",
+      "destination": "/blog/virtual-reality-and-modern-digital-simulation",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/virtual-reality(?:/)?$"
+    },
+    {
+      "source": "/top-3-programming-languages-to-learn-in-2020",
+      "destination": "/blog/top-programming-languages-for-enterprise-software",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/top-3-programming-languages-to-learn-in-2020(?:/)?$"
+    },
+    {
+      "source": "/freelancing-as-a-career",
+      "destination": "/blog/tech-talent-and-global-outsourcing-in-bangladesh",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/freelancing-as-a-career(?:/)?$"
+    },
+    {
+      "source": "/motin-mia-a-fairytale-bangladeshi-footballer",
+      "destination": "/blog/motin-mia-a-fairytale-bangladeshi-footballer",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/motin-mia-a-fairytale-bangladeshi-footballer(?:/)?$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$",
+      "prefetchSegmentDataRoutes": [
+        {
+          "destination": "/blog/[slug].segments/blog/$d$slug$segment",
+          "source": "^/blog/(?<nxtPslug>[^/]+?)\\.segments/blog/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
+          "routeKeys": {
+            "nxtPslug": "nxtPslug"
+          }
+        }
+      ]
+    },
+    {
+      "page": "/portfolio/[slug]",
+      "regex": "^/portfolio/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/portfolio/(?<nxtPslug>[^/]+?)(?:/)?$",
+      "prefetchSegmentDataRoutes": [
+        {
+          "destination": "/portfolio/[slug].segments/portfolio/$d$slug$segment",
+          "source": "^/portfolio/(?<nxtPslug>[^/]+?)\\.segments/portfolio/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
+          "routeKeys": {
+            "nxtPslug": "nxtPslug"
+          }
+        }
+      ]
+    },
+    {
+      "page": "/services/[slug]",
+      "regex": "^/services/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/services/(?<nxtPslug>[^/]+?)(?:/)?$",
+      "prefetchSegmentDataRoutes": [
+        {
+          "destination": "/services/[slug].segments/services/$d$slug$segment",
+          "source": "^/services/(?<nxtPslug>[^/]+?)\\.segments/services/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
+          "routeKeys": {
+            "nxtPslug": "nxtPslug"
+          }
+        }
+      ]
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/portfolio",
+      "regex": "^/portfolio(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portfolio(?:/)?$"
+    },
+    {
+      "page": "/privacy",
+      "regex": "^/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/terms",
+      "regex": "^/terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms(?:/)?$"
+    },
+    {
+      "page": "/tools",
+      "regex": "^/tools(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": true,
+    "dynamicRSCPrerender": true
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "ppr": {
+    "chain": {
+      "headers": {
+        "next-resume": "1"
+      }
+    }
+  }
+}

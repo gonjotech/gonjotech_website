@@ -4,6 +4,7 @@ deployment:
     - export DEPLOYPATH=/home/$USER/public_html
     - /bin/cp -R * $DEPLOYPATH 2>/dev/null || :
     - /bin/cp -R .next $DEPLOYPATH/ 2>/dev/null || :
+    - /bin/cp public/ads.txt $DEPLOYPATH/ads.txt 2>/dev/null || :
     - /bin/mkdir -p $DEPLOYPATH/tmp 2>/dev/null || :
     - /bin/touch $DEPLOYPATH/tmp/restart.txt 2>/dev/null || :
     - /bin/mkdir -p tmp

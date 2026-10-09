@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/1tq6ppe__m8m-.js"
+4:"/_next/static/chunks/1s0pmmt-fr5rm.js"
+5:I[39756,["$3","$4"],"default"]
+6:I[37457,["$3","$4"],"default"]
+b:I[22016,["$3","$4"],""]
+c:I[5014,["$3","$4"],"default"]
+d:I[97367,["$3","$4"],"OutletBoundary"]
+e:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[97367,["$3","$4"],"$12"]
+14:"MetadataBoundary"
+15:I[97367,["$3","$4"],"$14"]
+16:I[27201,["$3","$4"],"IconMark"]
+8:X
+8:C
+9:X
+9:300
+9:C
+11:X
+11:C
+a:[["children",{"s":"__PAGE__","h":49314,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"min-h-[75vh] flex items-center justify-center px-4 py-16","children":["$","div",null,{"className":"max-w-md w-full text-center space-y-6","children":[["$","div",null,{"className":"relative inline-block","children":[["$","span",null,{"className":"text-8xl sm:text-9xl font-black bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-400 bg-clip-text text-transparent select-none","children":"404"}],["$","div",null,{"className":"ambient-glow bg-cyan-500/20 w-40 h-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"}]]}],["$","div",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-2xl sm:text-3xl font-bold text-white","children":"Page Not Found"}],["$","p",null,{"className":"text-sm text-slate-400 leading-relaxed","children":"The page or resource you are looking for has been moved, renamed, or is unavailable in the new system architecture."}]]}],["$","div",null,{"className":"pt-2 flex flex-col sm:flex-row items-center justify-center gap-3","children":[["$","$Lb",null,{"href":"/","className":"w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-lg shadow-cyan-500/20 transition-all","children":[["$","$Lc",null,{"icon":{"name":"house","size":24,"node":[["path",{"d":"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8","key":"5wwlr5"}],["path",{"d":"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z","key":"r6nss1"}]],"aliases":["home"]},"className":"w-4 h-4"}],["$","span",null,{"children":"Back to Home"}]]}],["$","$Lb",null,{"href":"/services","className":"w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-300 hover:text-white bg-slate-900 border border-white/10 hover:border-cyan-500/30 transition-all","children":[["$","$Lc",null,{"icon":{"name":"compass","size":24,"node":[["circle",{"cx":"12","cy":"12","r":"10","key":"1mglay"}],["path",{"d":"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z","key":"9ktpf1"}]]},"className":"w-4 h-4 text-cyan-400"}],["$","span",null,{"children":"Explore Services"}]]}]]}],["$","div",null,{"className":"pt-6 border-t border-white/10 text-xs text-slate-500","children":["Need immediate assistance?"," ",["$","$Lb",null,{"href":"/contact","className":"text-cyan-400 underline hover:text-cyan-300","children":"Contact Engineering Support"}]]}]]}]}],null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"p":"$@10","v":"$11","s":"$9"}}]]
+1:[["children",{"s":"/_not-found","h":49218,"d":{"r":["$","$2","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+18:X
+18:C
+1b:X
+1b:C
+0:{"t":{"t":{"s":"","h":49170,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"GonjoTech | Custom Software, Web & Mobile Engineering"}],["$","meta","1",{"name":"description","content":"GonjoTech is a premium digital technology brand engineering custom software, modern web platforms, GonjoERP suites, and native mobile applications for businesses in Bangladesh and worldwide."}],["$","link","2",{"rel":"author","href":"https://gonjotech.com"}],["$","meta","3",{"name":"author","content":"GonjoTech"}],["$","meta","4",{"name":"keywords","content":"GonjoTech,software development Bangladesh,custom software development,web development company Dhaka,mobile app development Android iOS,GonjoERP,ERP software Bangladesh,IT company Gopalganj Dhaka,software testing QA,Next.js web development"}],["$","meta","5",{"name":"creator","content":"GonjoTech"}],["$","meta","6",{"name":"publisher","content":"GonjoTech Software & Digital Solutions"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","9",{"rel":"canonical","href":"https://gonjotech.com"}],["$","meta","10",{"name":"google-site-verification","content":"3BgPy8fSQHUjJkNgLH_Ia4gJ5fwCLPYnEnhfUf0S4jA"}],["$","meta","11",{"property":"og:title","content":"GonjoTech | Custom Software, Web & Mobile Engineering"}],["$","meta","12",{"property":"og:description","content":"Turning bold ideas into powerful digital solutions. Enterprise software, web development, ERP platforms, and mobile apps engineered for scale."}],["$","meta","13",{"property":"og:url","content":"https://gonjotech.com"}],["$","meta","14",{"property":"og:site_name","content":"GonjoTech"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:type","content":"website"}],["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","18",{"name":"twitter:creator","content":"@gonjotech"}],["$","meta","19",{"name":"twitter:title","content":"GonjoTech | Custom Software & Modern Digital Solutions"}],["$","meta","20",{"name":"twitter:description","content":"Enterprise software, responsive web portals, mobile apps, and GonjoERP solutions engineered for international performance."}],["$","link","21",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L16","22",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":"$18","s":"$9"}},"a":"$@19","u":"$@1a","b":"LI4x351bOLxjym9h-rNvt","r":"$1b"}
+f:null
+1a:false
+19:null
+7:"$undefined"
+17:"$undefined"
+10:"$undefined"

@@ -13,8 +13,11 @@
 # testing
 /coverage
 
-# next.js
-/.next/
+# next.js (track production build for zero-command cPanel Git deployment)
+/.next/cache/
+/.next/dev/
+/.next/diagnostics/
+/.next/trace*
 /out/
 
 # production
