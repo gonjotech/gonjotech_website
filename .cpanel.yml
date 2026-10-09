@@ -1,11 +1,12 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/$USER/public_html
-    - /bin/cp -R * $DEPLOYPATH 2>/dev/null || :
-    - /bin/cp -R .next $DEPLOYPATH/ 2>/dev/null || :
-    - /bin/cp public/ads.txt $DEPLOYPATH/ads.txt 2>/dev/null || :
+    - export DEPLOYPATH=/home/gonjotech/public_html
+    - /bin/cp -rf * $DEPLOYPATH/ 2>/dev/null || :
+    - /bin/cp -rf .next $DEPLOYPATH/ 2>/dev/null || :
+    - /bin/cp -f .htaccess $DEPLOYPATH/.htaccess 2>/dev/null || :
+    - /bin/cp -f public/ads.txt $DEPLOYPATH/ads.txt 2>/dev/null || :
     - /bin/mkdir -p $DEPLOYPATH/tmp 2>/dev/null || :
     - /bin/touch $DEPLOYPATH/tmp/restart.txt 2>/dev/null || :
-    - /bin/mkdir -p tmp
-    - /bin/touch tmp/restart.txt
+    - /bin/mkdir -p tmp 2>/dev/null || :
+    - /bin/touch tmp/restart.txt 2>/dev/null || :
