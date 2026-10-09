@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   Send,
   CheckCircle2,
@@ -12,7 +13,9 @@ import {
 } from "lucide-react";
 import { servicesData } from "@/data/services";
 
-export default function ContactForm() {
+function ContactFormInner() {
+  const searchParams = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,6 +27,21 @@ export default function ContactForm() {
     privacyConsent: false,
     honeypot: "", // hidden field for bot spam trap
   });
+
+  // Pre-populate service dropdown if passed in query param (?service=...)
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      const matched = servicesData.find(
+        (s) => s.title.toLowerCase() === serviceParam.toLowerCase()
+      );
+      if (matched) {
+        setFormData((prev) => ({ ...prev, service: matched.title }));
+      } else {
+        setFormData((prev) => ({ ...prev, service: serviceParam }));
+      }
+    }
+  }, [searchParams]);
 
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -51,11 +69,11 @@ export default function ContactForm() {
       return;
     }
     if (!formData.email.trim() || !formData.email.includes("@")) {
-      setErrorMsg("Please enter a valid email address.");
+      setErrorMsg("Please enter a valid business email address.");
       return;
     }
     if (!formData.message.trim() || formData.message.trim().length < 10) {
-      setErrorMsg("Please write at least 10 characters detailing your project.");
+      setErrorMsg("Please write at least 10 characters detailing your project goals.");
       return;
     }
     if (!formData.privacyConsent) {
@@ -86,7 +104,9 @@ export default function ContactForm() {
       if (err instanceof Error) {
         setErrorMsg(err.message);
       } else {
-        setErrorMsg("Failed to connect to inquiry server. Please email info@gonjotech.com directly.");
+        setErrorMsg(
+          "Failed to connect to inquiry server. Please email info@gonjotech.com directly."
+        );
       }
     } finally {
       setLoading(false);
@@ -164,10 +184,10 @@ export default function ContactForm() {
 
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Tell Us About Your Project
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400">
+          <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
             Fill out the details below. We reply with technical proposals in under 24 hours.
           </p>
         </div>
@@ -178,7 +198,10 @@ export default function ContactForm() {
       </div>
 
       {errorMsg && (
-        <div className="flex items-center gap-3 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm">
+        <div
+          role="alert"
+          className="flex items-center gap-3 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm"
+        >
           <AlertCircle className="w-5 h-5 shrink-0 text-rose-400" />
           <span>{errorMsg}</span>
         </div>
@@ -258,7 +281,7 @@ export default function ContactForm() {
             id="service"
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#070b14] border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-sm transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#070b14] border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-sm transition-all cursor-pointer"
           >
             {servicesData.map((s) => (
               <option key={s.id} value={s.title}>
@@ -277,7 +300,7 @@ export default function ContactForm() {
             id="budget"
             value={formData.budget}
             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#070b14] border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-sm transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#070b14] border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-sm transition-all cursor-pointer"
           >
             {budgetOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -312,9 +335,9 @@ export default function ContactForm() {
           required
           checked={formData.privacyConsent}
           onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
-          className="mt-1 w-4 h-4 rounded text-cyan-500 bg-[#070b14] border-white/20 focus:ring-cyan-400 focus:ring-offset-0"
+          className="mt-1 w-4 h-4 rounded text-cyan-500 bg-[#070b14] border-white/20 focus:ring-cyan-400 focus:ring-offset-0 cursor-pointer"
         />
-        <label htmlFor="privacyConsent" className="text-xs text-slate-400 leading-normal">
+        <label htmlFor="privacyConsent" className="text-xs text-slate-400 leading-normal cursor-pointer select-none">
           I consent to GonjoTech processing my inquiry details in accordance with the{" "}
           <Link href="/privacy" className="text-cyan-400 underline hover:text-cyan-300">
             Privacy Policy
@@ -343,5 +366,19 @@ export default function ContactForm() {
         )}
       </button>
     </form>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense
+      fallback={
+        <div className="p-12 text-center text-slate-400 bg-[#0b1322] rounded-3xl border border-white/10 animate-pulse">
+          Loading inquiry form...
+        </div>
+      }
+    >
+      <ContactFormInner />
+    </Suspense>
   );
 }

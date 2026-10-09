@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const whatsappUrl = `https://wa.me/${companyData.whatsappPhone}?text=${encodeURIComponent(
+  const cleanNumber = companyData.whatsappPhone.replace(/[^0-9]/g, "");
+  const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
     "Hello GonjoTech! I would like to discuss a new software project."
   )}`;
 

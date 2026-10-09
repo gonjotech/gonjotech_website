@@ -4,7 +4,8 @@ import { MessageCircle } from "lucide-react";
 import { companyData } from "@/data/company";
 
 export default function WhatsAppButton() {
-  const whatsappUrl = `https://wa.me/${companyData.whatsappPhone}?text=${encodeURIComponent(
+  const cleanNumber = companyData.whatsappPhone.replace(/[^0-9]/g, "");
+  const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
     "Hello GonjoTech! I would like to inquire about your software and web development services."
   )}`;
 

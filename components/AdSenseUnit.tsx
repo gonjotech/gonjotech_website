@@ -16,17 +16,19 @@ export default function AdSenseUnit({
   className = "",
 }: AdSenseUnitProps) {
   const adRef = useRef<HTMLModElement | null>(null);
+  const isPushed = useRef(false);
 
   useEffect(() => {
+    if (isPushed.current) return;
     try {
       if (typeof window !== "undefined") {
-        // Safe push into adsbygoogle queue
-        ((window as unknown as { adsbygoogle: unknown[] }).adsbygoogle =
-          (window as unknown as { adsbygoogle: unknown[] }).adsbygoogle || []).push({});
+        const windowWithAds = window as unknown as { adsbygoogle?: unknown[] };
+        windowWithAds.adsbygoogle = windowWithAds.adsbygoogle || [];
+        windowWithAds.adsbygoogle.push({});
+        isPushed.current = true;
       }
-    } catch (err) {
-      // Ad blocker or initial load suppression
-      console.warn("[AdSense Error/AdBlocker active]:", err);
+    } catch {
+      // Ignored for ad blocker or development mode
     }
   }, []);
 
@@ -34,7 +36,7 @@ export default function AdSenseUnit({
     <div
       className={`my-8 p-3 rounded-2xl bg-[#070b14]/60 border border-white/5 text-center overflow-hidden ${className}`}
     >
-      <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-2 select-none">
+      <div className="text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-2 select-none">
         Advertisement
       </div>
       <div className="flex items-center justify-center min-h-[90px] overflow-hidden">
