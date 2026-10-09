@@ -1,0 +1,466 @@
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  icon: string;
+  category: "Development" | "Enterprise" | "Quality" | "Growth";
+  features: string[];
+  deliverables: string[];
+  technologies: string[];
+  benefits: {
+    title: string;
+    description: string;
+  }[];
+  process: {
+    step: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export const servicesData: Service[] = [
+  {
+    id: "software-dev",
+    slug: "custom-software-development",
+    title: "Custom Software Development",
+    shortDescription:
+      "Engineered tailored software solutions, automated workflows, and high-performance enterprise systems built for scale.",
+    fullDescription:
+      "GonjoTech designs and delivers custom software tailored specifically to your unique business operations. Whether building mission-critical enterprise systems from scratch or deploying modular ready-to-run business software, our team applies industry-leading architectural patterns, clean coding practices, and modern tech stacks.",
+    icon: "Cpu",
+    category: "Development",
+    features: [
+      "Custom Enterprise Workflow Systems",
+      "Ready-to-Deploy Modular Software Products",
+      "High-Throughput REST & GraphQL APIs",
+      "Legacy Code Modernization & Migration",
+      "Microservices & Event-Driven Architecture",
+      "Database Modeling & Performance Optimization",
+    ],
+    deliverables: [
+      "Production-ready backend and frontend codebase",
+      "Interactive administrative dashboard",
+      "Comprehensive API documentation and Postman collections",
+      "Automated CI/CD deployment pipelines",
+      "Security audit and penetration testing clearance",
+      "Full source code ownership and technical handoff",
+    ],
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "Python / Django",
+      "Java / Spring Boot",
+      "PHP / Laravel",
+      "PostgreSQL",
+      "Docker",
+    ],
+    benefits: [
+      {
+        title: "Exact Operational Alignment",
+        description:
+          "Software built to match your exact processes rather than forcing your business to adapt to rigid off-the-shelf software.",
+      },
+      {
+        title: "Uncompromised Data Security",
+        description:
+          "Enterprise encryption at rest and in transit, role-based access control, and compliant audit trails.",
+      },
+      {
+        title: "Continuous Scalability",
+        description:
+          "Modular software architecture that scales seamlessly as your transaction volume and headcount expand.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Requirements & Architecture",
+        description: "Mapping domain models, business constraints, and data flows.",
+      },
+      {
+        step: "02",
+        title: "Sprint-Based Engineering",
+        description: "Iterative development cycles with bi-weekly client demos and code reviews.",
+      },
+      {
+        step: "03",
+        title: "Security & Load Testing",
+        description: "Hardening endpoints, benchmark stress tests, and automated regressions.",
+      },
+      {
+        step: "04",
+        title: "Deployment & Training",
+        description: "Zero-downtime production deployment, staff orientation, and 24/7 SLA standby.",
+      },
+    ],
+  },
+  {
+    id: "web-dev",
+    slug: "web-development",
+    title: "Web Design & Web Application Development",
+    shortDescription:
+      "Modern, ultra-fast, and responsive web applications, dynamic portals, and headless CMS architectures.",
+    fullDescription:
+      "We build immersive, responsive web applications engineered for speed, conversions, and intuitive user delight. From complex customer portals to high-traffic corporate websites and headless CMS ecosystems, GonjoTech blends sleek UI/UX design with robust Next.js and React engineering.",
+    icon: "Globe",
+    category: "Development",
+    features: [
+      "Next.js & React Full-Stack Web Applications",
+      "Ultra-Fast Responsive Web Design for All Screen Sizes",
+      "Headless CMS Integration (Sanity, Strapi, WordPress)",
+      "High-Converting Corporate Brand Websites",
+      "SaaS Web Portals & Customer Dashboards",
+      "Core Web Vitals & Technical SEO Optimization",
+    ],
+    deliverables: [
+      "Responsive, mobile-first web application",
+      "Figma UI/UX design system & component library",
+      "Optimized assets and sub-second page loads",
+      "Semantic HTML & structured data for search engine discovery",
+      "Multi-language (i18n) localization capability",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vue.js",
+      "REST / GraphQL",
+      "Vercel / Cloudflare",
+    ],
+    benefits: [
+      {
+        title: "Sub-Second Load Times",
+        description:
+          "Optimized static generation and server rendering for maximum conversion rates and instant interactivity.",
+      },
+      {
+        title: "Flawless Device Adaptability",
+        description:
+          "Pixel-perfect layouts across 320px mobile smartphones up to 4K desktop screens.",
+      },
+      {
+        title: "Search Engine Prominence",
+        description:
+          "Built-in technical SEO best practices ensure your brand ranks for competitive business search queries.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "UX Research & Wireframing",
+        description: "User journey mapping and high-fidelity prototype validation.",
+      },
+      {
+        step: "02",
+        title: "Frontend Engineering",
+        description: "Component-driven development using modern TypeScript and responsive CSS.",
+      },
+      {
+        step: "03",
+        title: "API & Backend Integration",
+        description: "Secure data binding, server-side caching, and authentication flows.",
+      },
+      {
+        step: "04",
+        title: "Launch Optimization",
+        description: "Lighthouse audit targeting 95+ scores and production CDN distribution.",
+      },
+    ],
+  },
+  {
+    id: "mobile-dev",
+    slug: "mobile-app-development",
+    title: "Mobile Application Development",
+    shortDescription:
+      "Native Android & iOS applications, cross-platform mobile experiences, and website-to-app conversion.",
+    fullDescription:
+      "Capture the rapidly growing mobile audience with high-performing native and cross-platform applications. GonjoTech builds smooth, intuitive Android and iOS apps designed for offline capabilities, instant responsiveness, and seamless hardware sensor integration. We also specialize in converting existing websites into feature-rich mobile applications.",
+    icon: "Smartphone",
+    category: "Development",
+    features: [
+      "Native Android App Development (Kotlin & Java)",
+      "Native iOS App Development (Swift)",
+      "Cross-Platform Apps with React Native & Flutter",
+      "Website-to-App Conversion with Push Notifications",
+      "In-App Purchases & Secure Mobile Payment Gateways",
+      "App Store & Google Play Store Submission Management",
+    ],
+    deliverables: [
+      "Compiled production APK / AAB and iOS IPA builds",
+      "App Store and Google Play compliance review pass",
+      "Push notification integration (Firebase Cloud Messaging)",
+      "Biometric login & offline caching engine",
+      "Crashlytics and real-time telemetry monitoring",
+    ],
+    technologies: [
+      "Android Studio",
+      "Kotlin / Java",
+      "Swift / iOS SDK",
+      "React Native",
+      "Flutter",
+      "Firebase",
+      "SQLite / Room",
+    ],
+    benefits: [
+      {
+        title: "Direct Customer Engagement",
+        description:
+          "Instant customer re-engagement through rich push notifications and home screen app presence.",
+      },
+      {
+        title: "Fluid 60 FPS Performance",
+        description:
+          "Optimized animations and native memory management deliver silky smooth mobile interactions.",
+      },
+      {
+        title: "Zero-Hassle App Store Publishing",
+        description:
+          "End-to-end publishing handling review guidelines, privacy manifests, and store optimization.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Mobile UX & Interface Design",
+        description: "Touch-friendly human interface design tailored for iOS and Android.",
+      },
+      {
+        step: "02",
+        title: "Core Feature Engineering",
+        description: "Building native modules, state management, and real-time backend sync.",
+      },
+      {
+        step: "03",
+        title: "Multi-Device Hardware QA",
+        description: "Testing on real physical Android smartphones, tablets, and iPhones.",
+      },
+      {
+        step: "04",
+        title: "Store Submission & Launch",
+        description: "Complete release packaging, certificate signing, and post-release monitoring.",
+      },
+    ],
+  },
+  {
+    id: "erp-enterprise",
+    slug: "enterprise-erp-solutions",
+    title: "Enterprise Solutions & GonjoERP",
+    shortDescription:
+      "End-to-end ERP platforms, educational management software, and unified e-commerce & POS systems.",
+    fullDescription:
+      "Streamline complex business operations with GonjoTech's enterprise suite. From GonjoERP for manufacturing and multi-branch trading to GonjoEducation for universities and schools, our platforms unify inventory, finance, payroll, CRM, and point-of-sale into a single source of operational truth.",
+    icon: "Layers",
+    category: "Enterprise",
+    features: [
+      "GonjoERP Enterprise Resource Planning Suite",
+      "GonjoEducation: School, College & University Software",
+      "Omnichannel E-Commerce & Retail POS Systems",
+      "Multi-Warehouse Inventory & Real-Time Stock Tracking",
+      "Automated Double-Entry Accounting & Financial Reports",
+      "Role-Based Access Control & Multi-Branch Hierarchy",
+    ],
+    deliverables: [
+      "Configured enterprise ERP instance (cloud or on-premise)",
+      "Custom branch and warehouse data migration",
+      "Integrated POS hardware driver configuration",
+      "Admin, teacher, student, and accountant portal views",
+      "Automated recurring data backup and failover architecture",
+    ],
+    technologies: [
+      "Next.js",
+      "Spring Boot",
+      "PostgreSQL",
+      "Laravel",
+      "Redis",
+      "Docker",
+      "Linux / AWS",
+    ],
+    benefits: [
+      {
+        title: "Total Operational Visibility",
+        description:
+          "Eliminate information silos with unified real-time analytics across inventory, sales, and accounts.",
+      },
+      {
+        title: "Cost & Fraud Reduction",
+        description:
+          "Automated ledger balancing and approval workflows eliminate discrepancies and manual leakage.",
+      },
+      {
+        title: "Education Sector Specialization",
+        description:
+          "Dedicated modules for student grading, fee collection, attendance biometric sync, and parent SMS.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Operational Discovery",
+        description: "Auditing existing spreadsheets, paper trails, and legacy software workflows.",
+      },
+      {
+        step: "02",
+        title: "Module Configuration & Migration",
+        description: "Setting up charts of accounts, inventory SKUs, and student/staff directories.",
+      },
+      {
+        step: "03",
+        title: "Staff UAT & Pilot Testing",
+        description: "Hands-on department dry-runs to ensure operational readiness.",
+      },
+      {
+        step: "04",
+        title: "Enterprise Cutover & Standby",
+        description: "Live system switch with senior engineering presence during initial operating cycles.",
+      },
+    ],
+  },
+  {
+    id: "testing-qa",
+    slug: "testing-quality-assurance",
+    title: "Testing & Quality Assurance",
+    shortDescription:
+      "Comprehensive manual and automated testing, security audits, and benchmark performance validation.",
+    fullDescription:
+      "Avoid embarrassing production failures and security vulnerabilities before your customers experience them. GonjoTech provides rigorous Quality Assurance services covering automated regression pipelines, load and stress benchmarks, API contract testing, and mobile hardware validation.",
+    icon: "ShieldAlert",
+    category: "Quality",
+    features: [
+      "Functional & Regression Testing",
+      "Automated End-to-End Testing (Playwright / Cypress)",
+      "High-Concurrency Performance & Stress Testing",
+      "Security Audits & Vulnerability Assessment",
+      "Cross-Browser & Multi-Device Mobile QA",
+      "API Testing & Microservices Contract Verification",
+    ],
+    deliverables: [
+      "Detailed QA audit report with severity rankings",
+      "Automated test suites integrated into your CI/CD",
+      "Load test benchmark graphs and bottleneck analysis",
+      "Accessibility (WCAG 2.1) compliance certificate",
+      "Production readiness sign-off document",
+    ],
+    technologies: [
+      "Playwright",
+      "Cypress",
+      "Postman / Newman",
+      "JMeter",
+      "OWASP ZAP",
+      "GitHub Actions",
+    ],
+    benefits: [
+      {
+        title: "Protect Brand Reputation",
+        description:
+          "Catch edge-case defects before they trigger user churn or public reputational damage.",
+      },
+      {
+        title: "Accelerate Release Velocity",
+        description:
+          "Automated regression suites run in minutes, allowing fearless daily deployments.",
+      },
+      {
+        title: "Defend Against Exploits",
+        description:
+          "Proactive security scanning protects client data against injection, auth bypass, and leaks.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Test Plan Definition",
+        description: "Creating test matrices, edge scenarios, and acceptance criteria.",
+      },
+      {
+        step: "02",
+        title: "Automated Suite Creation",
+        description: "Writing maintainable end-to-end and integration test scripts.",
+      },
+      {
+        step: "03",
+        title: "Stress & Benchmark Runs",
+        description: "Simulating peak concurrent user traffic to identify memory and DB bottlenecks.",
+      },
+      {
+        step: "04",
+        title: "Final Audit Signoff",
+        description: "Comprehensive verification report and automated continuous testing pipeline setup.",
+      },
+    ],
+  },
+  {
+    id: "marketing-seo",
+    slug: "digital-marketing-seo",
+    title: "Digital Marketing & Technical SEO",
+    shortDescription:
+      "Data-driven growth strategies, technical search engine optimization, content marketing, and conversion optimization.",
+    fullDescription:
+      "Building world-class software is only half the battle; ensuring your target customers find and trust you is the other half. GonjoTech’s digital growth team combines technical on-page SEO, high-authority content strategies, and targeted campaign optimization to drive predictable qualified business leads.",
+    icon: "TrendingUp",
+    category: "Growth",
+    features: [
+      "Technical SEO & Core Web Vitals Auditing",
+      "Keyword Research & Search Intent Mapping",
+      "Conversion Rate Optimization (CRO)",
+      "Targeted Social Media & LinkedIn B2B Campaigns",
+      "Content Marketing & Technical Blog Architecture",
+      "Analytics Setup (GA4, Google Search Console, Mixpanel)",
+    ],
+    deliverables: [
+      "Comprehensive technical SEO roadmap",
+      "Optimized site architecture and JSON-LD schema",
+      "Targeted keyword content calendar",
+      "Custom conversion tracking and analytics dashboard",
+      "Monthly search performance and ROI reports",
+    ],
+    technologies: [
+      "Google Search Console",
+      "Google Analytics 4",
+      "Ahrefs / SEMrush",
+      "Next.js SEO Metadata",
+      "Schema.org Structured Data",
+    ],
+    benefits: [
+      {
+        title: "Sustainable Inbound Pipeline",
+        description:
+          "Rank high for high-intent search terms to attract qualified commercial inquiries organically.",
+      },
+      {
+        title: "Higher Conversion Yield",
+        description:
+          "Optimize user flows, landing page hierarchy, and CTAs to turn visitors into paying clients.",
+      },
+      {
+        title: "Measurable ROI Tracking",
+        description:
+          "Complete transparency with data dashboards linking traffic to actual business leads.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Discovery & Competitive Audit",
+        description: "Analyzing domain health, competitor rankings, and keyword opportunities.",
+      },
+      {
+        step: "02",
+        title: "On-Page & Technical Remediation",
+        description: "Fixing crawl errors, schema markup, Core Web Vitals, and metadata.",
+      },
+      {
+        step: "03",
+        title: "Content & Funnel Optimization",
+        description: "Publishing authoritative landing pages and engineering high-converting forms.",
+      },
+      {
+        step: "04",
+        title: "Iterative Scaling & Monitoring",
+        description: "Tracking search engine rank improvements and continually refining performance.",
+      },
+    ],
+  },
+];

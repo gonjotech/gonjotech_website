@@ -1,0 +1,144 @@
+export interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  category: "Enterprise Software" | "Web Application" | "Mobile App" | "Custom Software";
+  client: string;
+  isSampleCaseStudy?: boolean;
+  featured: boolean;
+  summary: string;
+  overview: string;
+  challenge: string;
+  solution: string;
+  results: {
+    metric: string;
+    label: string;
+  }[];
+  technologies: string[];
+  deliverables: string[];
+  image: string;
+  accentColor: string;
+}
+
+export const projectsData: Project[] = [
+  {
+    id: "gonjo-erp",
+    slug: "gonjo-erp-enterprise-suite",
+    title: "GonjoERP Enterprise Resource Platform",
+    category: "Enterprise Software",
+    client: "Commercial Wholesale & Distribution",
+    featured: true,
+    summary:
+      "A complete enterprise management platform synchronizing inventory across multi-location warehouses, double-entry accounting, and real-time ledger generation.",
+    overview:
+      "GonjoERP was engineered to solve the operational friction of high-volume wholesale trading and manufacturing businesses dealing with disparate legacy spreadsheets and stock discrepancies.",
+    challenge:
+      "The client was losing hours reconciling physical inventory with accounting records. Delays in sales order approvals caused frequent stockouts and delayed customer dispatches across three regional distribution centers.",
+    solution:
+      "GonjoTech built a unified cloud ERP architecture with PostgreSQL ACID transaction guarantees, automated FIFO stock valuation, barcode-driven picking workflows, and real-time financial reporting.",
+    results: [
+      { metric: "99.4%", label: "Stock Count Accuracy" },
+      { metric: "75%", label: "Reduction in Reconcile Time" },
+      { metric: "3.2x", label: "Faster Order Processing" },
+    ],
+    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Docker"],
+    deliverables: [
+      "Custom Multi-Warehouse ERP",
+      "Automated Double-Entry Accounting Engine",
+      "Role-Based Permission Matrix",
+      "Staff Training & Data Migration",
+    ],
+    image: "/images/projects/erp-preview.svg",
+    accentColor: "from-blue-600/30 to-cyan-500/10",
+  },
+  {
+    id: "gonjo-edu",
+    slug: "gonjo-education-management",
+    title: "GonjoEducation Smart Campus Suite",
+    category: "Custom Software",
+    client: "Academic Institutions & Colleges",
+    featured: true,
+    summary:
+      "Comprehensive academic lifecycle system managing student enrollment, attendance biometric sync, examination grading, and online fee collection.",
+    overview:
+      "GonjoEducation provides a centralized administrative operating system designed to digitize administrative paperwork and enhance parent-institution communication.",
+    challenge:
+      "Manual fee registers and paper-based report cards resulted in lengthy semester turnaround times, fee collection delays, and limited transparency for guardians.",
+    solution:
+      "We engineered a modern multi-tenant academic portal with automated SMS notifications, online payment gateway integrations (bKash, cards), and an intuitive teacher gradebook interface.",
+    results: [
+      { metric: "90%", label: "Faster Report Card Generation" },
+      { metric: "100%", label: "Digital Fee Reconciliation" },
+      { metric: "15,000+", label: "Active Student Records" },
+    ],
+    technologies: ["React", "Laravel / PHP", "MySQL", "Tailwind CSS", "Redis"],
+    deliverables: [
+      "Student & Guardian Web Portals",
+      "Teacher Grading & Attendance Dashboard",
+      "SMS Notification Engine",
+      "Integrated Digital Payment Gateway",
+    ],
+    image: "/images/projects/edu-preview.svg",
+    accentColor: "from-indigo-600/30 to-violet-500/10",
+  },
+  {
+    id: "retail-pos",
+    slug: "omnichannel-retail-pos-ecommerce",
+    title: "RetailSphere Omnichannel POS & Storefront",
+    category: "Web Application",
+    client: "Modern Retail & Fashion Brand",
+    featured: true,
+    summary:
+      "High-speed Point-of-Sale desktop system paired with an ultrafast consumer digital storefront sharing real-time synchronized stock.",
+    overview:
+      "A hybrid solution providing in-store cashier terminals with offline resilience alongside a modern headless e-commerce storefront for online retail.",
+    challenge:
+      "Selling simultaneously in physical showrooms and online led to frequent double-selling errors when popular items sold out in store before the website updated.",
+    solution:
+      "GonjoTech built a synchronized web-socket stock engine. If a cashier scans an item in-store, digital inventory is updated in milliseconds across the web storefront.",
+    results: [
+      { metric: "<150ms", label: "Inventory Sync Latency" },
+      { metric: "0", label: "Double-Sell Stock Discrepancies" },
+      { metric: "45%", label: "Increase in Online GMV" },
+    ],
+    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Redis"],
+    deliverables: [
+      "Offline-first POS Cashier Interface",
+      "Responsive E-Commerce Storefront",
+      "Unified Customer Loyalty System",
+      "Thermal Receipt Printer Driver Support",
+    ],
+    image: "/images/projects/pos-preview.svg",
+    accentColor: "from-emerald-600/30 to-teal-500/10",
+  },
+  {
+    id: "swift-courier",
+    slug: "swiftlogistics-courier-mobile-app",
+    title: "SwiftLogistics Real-Time Courier App",
+    category: "Mobile App",
+    client: "Express Delivery & Fulfillment",
+    featured: false,
+    summary:
+      "Native mobile companion for parcel dispatchers and delivery drivers with GPS route optimization and digital signature capture.",
+    overview:
+      "A high-reliability mobile application deployed to field riders to coordinate hundreds of daily package deliveries with live customer tracking.",
+    challenge:
+      "Drivers experienced connection drops in rural areas, leading to lost delivery statuses and inability to confirm recipient deliveries promptly.",
+    solution:
+      "Built with SQLite offline caching, automatic background syncing when network reconnects, optimized map routing, and camera photo proof-of-delivery.",
+    results: [
+      { metric: "99.8%", label: "Delivery Status Sync Rate" },
+      { metric: "22%", label: "Fuel and Travel Time Saved" },
+      { metric: "4.9/5", label: "Driver Usability Rating" },
+    ],
+    technologies: ["React Native", "TypeScript", "Android SDK", "iOS SDK", "Firebase"],
+    deliverables: [
+      "Rider Mobile App (Android & iOS)",
+      "Dispatcher Operations Web Console",
+      "Customer Real-time Tracking Web View",
+      "Digital Signature & Photo Verification",
+    ],
+    image: "/images/projects/mobile-preview.svg",
+    accentColor: "from-cyan-600/30 to-blue-500/10",
+  },
+];
