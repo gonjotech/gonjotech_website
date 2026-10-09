@@ -6,6 +6,10 @@ DirectoryIndex index.html index.htm index.php
   RewriteEngine On
   RewriteBase /
 
+  # Security: Block direct access to hidden files/folders (.git, .env, etc.)
+  RewriteRule ^.git - [F,L]
+  RewriteRule ^.cpanel.yml$ - [F,L]
+
   # 1. Permanent 301 Redirects for Legacy URLs
   RewriteRule ^home/?$ / [R=301,L]
   RewriteRule ^blogsc/?$ /blog [R=301,L]
