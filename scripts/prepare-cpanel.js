@@ -86,6 +86,14 @@ if (fs.existsSync(staticSrc)) {
   console.log('✓ Mirrored .next/static to _next/static for zero-latency asset delivery');
 }
 
+// 2b. Mirror public/images to images for direct root image delivery
+const publicImagesSrc = path.join(rootDir, 'public', 'images');
+const rootImagesDest = path.join(rootDir, 'images');
+if (fs.existsSync(publicImagesSrc)) {
+  copyDirSync(publicImagesSrc, rootImagesDest);
+  console.log('✓ Mirrored public/images to images for direct root image delivery');
+}
+
 // 3. Export pre-rendered HTML files to root & clean directory structures
 function exportHtmlFiles() {
   if (!fs.existsSync(serverAppDir)) return;
@@ -161,10 +169,16 @@ DirectoryIndex index.html index.htm index.php
   RewriteRule ^freelancing-as-a-career/?$ /blog/tech-talent-and-global-outsourcing-in-bangladesh [R=301,L]
   RewriteRule ^motin-mia-a-fairytale-bangladeshi-footballer/?$ /blog/motin-mia-a-fairytale-bangladeshi-footballer [R=301,L]
 
-  # 2. Serve static Next.js assets
+  # 2. Serve images directly or fallback to public/images/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/public/images/$1 -f [OR]
+  RewriteCond public/images/$1 -f
+  RewriteRule ^images/(.*)$ public/images/$1 [L]
+
+  # 3. Serve static Next.js assets
   RewriteRule ^_next/static/(.*)$ .next/static/$1 [L,QSA]
 
-  # 3. If the actual file or directory exists, serve directly
+  # 4. If the actual file or directory exists, serve directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]

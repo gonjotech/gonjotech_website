@@ -3,6 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/gonjotech/public_html
     - /bin/cp -rf * $DEPLOYPATH/ 2>/dev/null || :
+    - /bin/cp -rf images $DEPLOYPATH/ 2>/dev/null || :
+    - /bin/cp -rf public $DEPLOYPATH/ 2>/dev/null || :
     - /bin/cp -rf .next $DEPLOYPATH/ 2>/dev/null || :
     - /bin/cp -rf _next $DEPLOYPATH/ 2>/dev/null || :
     - /bin/cp -f .htaccess $DEPLOYPATH/.htaccess 2>/dev/null || :
